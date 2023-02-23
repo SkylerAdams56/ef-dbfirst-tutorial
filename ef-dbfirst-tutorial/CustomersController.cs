@@ -46,9 +46,9 @@ namespace ef_dbfirst_tutorial
             var customer = await GetByIdAsync(id);
             if(customer is null)
             {
-                throw new Exception();
+                throw new Exception("Not Found");
             }
-            _context.Remove(id).State = EntityState.Deleted;
+            _context.Customers.Remove(customer);
             var changes = await _context.SaveChangesAsync();
             return(changes == 1) ? true : false;
         }

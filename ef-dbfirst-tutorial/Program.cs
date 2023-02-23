@@ -1,37 +1,52 @@
 ﻿using ef_dbfirst_tutorial;
 using ef_dbfirst_tutorial.Models;
 using Microsoft.EntityFrameworkCore;
-
+using System.ComponentModel;
 
 var custCtrl = new CustomersController();
+var dbc = new SalesDbContext();
+async Task<Customer> DeleteAsync(int id)
+{
+    return await dbc.Customers.FindAsync(id);
+    if (id != null) 
+    {
+        var success = custCtrl.DeleteAsync(37);
+    }
+}
 
-var bootcamp = await custCtrl.GetByIdAsync(37);
-bootcamp.Sales = 5000;
-var success = await custCtrl.UpdateAsync(bootcamp);
 
-Console.WriteLine(success ? "Ok" : "Failed");
+foreach (var customer in dbc.Customers)
+{
+    Console.WriteLine(customer.Name);
+}
 
-//var dbc = new SalesDbContext();
+
+
+
+
+
+
+
 
 //// customer = await GetById(1);
+//var bootcamp = await custCtrl.GetByIdAsync(37);
+//bootcamp.Sales = 5000;
+//var success = await custCtrl.UpdateAsync(bootcamp);
 
-//var cutsomers = await GetAll();
-
-//foreach (var c in cutsomers)
+//Console.WriteLine(success ? "Ok" : "Failed");
+//var customers = await GetAll();
+//async Task<List<Customer>> GetAll()
+//{
+//    return await dbc.Customers.ToListAsync();
+//}
+//foreach (var c in customers)
 //{
 //    Console.WriteLine(c.Name);
 //}
 //async Task<Customer> GetById(int id)
 //{
-//        return await dbc.Customers.FindAsync(id)!;
+//    return await dbc.Customers.FindAsync(id)!;
 //}
-
-//async Task<List<Customer>>  GetAll()
-//{
-//    return await dbc.Customers.ToListAsync();
-//}
-
-
 //var orderWithCustomers = from o in dbc.Orders
 //                         join c in dbc.Customers
 //                            on o.CustomerId equals c.Id
@@ -44,7 +59,7 @@ Console.WriteLine(success ? "Ok" : "Failed");
 //                         };
 //foreach (var oc in orderWithCustomers)
 //{
-//    Console.WriteLine($"{oc.Id,2} | {oc.Desc, -20} | {oc.Customer}");
+//    Console.WriteLine($"{oc.Id,2} | {oc.Desc,-20} | {oc.Customer}");
 //}
 
 
@@ -75,3 +90,4 @@ Console.WriteLine(success ? "Ok" : "Failed");
 //    Active = true
 //};
 //var success = await custCtrl.InsertAsync(cust);
+
