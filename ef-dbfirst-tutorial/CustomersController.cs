@@ -43,7 +43,7 @@ namespace ef_dbfirst_tutorial
         }
         public async Task<bool> DeleteAsync(int id)
         {
-            var customer = await GetByIdAsync(id);
+            var customer = await _context.Customers.FindAsync(id);
             if(customer is null)
             {
                 throw new Exception("Not Found");

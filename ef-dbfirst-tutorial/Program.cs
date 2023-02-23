@@ -5,20 +5,14 @@ using System.ComponentModel;
 
 var custCtrl = new CustomersController();
 var dbc = new SalesDbContext();
-async Task<Customer> DeleteAsync(int id)
-{
-    return await dbc.Customers.FindAsync(id);
-    if (id != null) 
-    {
-        var success = custCtrl.DeleteAsync(37);
-    }
-}
+var success = await custCtrl.DeleteAsync(37);
+Console.WriteLine(success);
 
 
-foreach (var customer in dbc.Customers)
-{
-    Console.WriteLine(customer.Name);
-}
+//foreach (var customer in dbc.Customers)
+//{
+//    Console.WriteLine(customer.Name);
+//}
 
 
 
