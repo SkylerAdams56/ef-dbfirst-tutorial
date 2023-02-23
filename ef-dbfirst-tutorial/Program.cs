@@ -3,25 +3,33 @@ using ef_dbfirst_tutorial.Models;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 
-var custCtrl = new CustomersController();
-var dbc = new SalesDbContext();
-var success = await custCtrl.DeleteAsync(37);
-Console.WriteLine(success);
+
+
+
+var ordCtrl = new OrdersController();
+var order = await ordCtrl.GetByIdAsync(1);
+Console.WriteLine(order);
+
+var orderTotal = order.OrderLines.Sum(x => x.Price * x.Quantity);
+Console.WriteLine($"Order total is {orderTotal:c}");
+
+
+
+
+
+
+
+
+//var custCtrl = new CustomersController();
+//var dbc = new SalesDbContext();
+//var success = await custCtrl.DeleteAsync(37);
+//Console.WriteLine(success);
 
 
 //foreach (var customer in dbc.Customers)
 //{
 //    Console.WriteLine(customer.Name);
 //}
-
-
-
-
-
-
-
-
-
 //// customer = await GetById(1);
 //var bootcamp = await custCtrl.GetByIdAsync(37);
 //bootcamp.Sales = 5000;

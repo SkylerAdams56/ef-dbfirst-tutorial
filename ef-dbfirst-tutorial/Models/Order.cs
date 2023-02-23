@@ -16,4 +16,14 @@ public partial class Order
     public virtual Customer? Customer { get; set; }
 
     public virtual ICollection<OrderLine> OrderLines { get; } = new List<OrderLine>();
+
+    public override string ToString()
+    {
+        var message = $"ORDER: Id:{Id,2}, CustId:{CustomerId} Date:{Date,-20}, Desc:{Description,-10}, Customer Name:{Customer.Name}";
+        foreach (var ol in OrderLines)
+        {
+            message += $"\nORDERLINE: Id:{ol.Id} | Product:{ol.Product} | Price:{ol.Price} | Quantity:{ol.Quantity}";
+        }
+        return message ;
+    }
 }
