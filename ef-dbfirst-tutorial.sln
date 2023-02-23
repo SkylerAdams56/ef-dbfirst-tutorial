@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ef-dbfirst-tutorial", "ef-dbfirst-tutorial\ef-dbfirst-tutorial.csproj", "{D617613B-A191-42B5-B988-8CC464AED744}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D617613B-A191-42B5-B988-8CC464AED744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D617613B-A191-42B5-B988-8CC464AED744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D617613B-A191-42B5-B988-8CC464AED744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D617613B-A191-42B5-B988-8CC464AED744}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C780E2A9-822D-474F-A8B0-35EAB5F5AF4F}
+	EndGlobalSection
+EndGlobal
